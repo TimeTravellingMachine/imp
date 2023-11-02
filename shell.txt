@@ -4,7 +4,7 @@ export POOL_PASS="x"
 export DONATE_LEVEL="0"
 
 # launch docker container
-docker run --name miner --rm -it \
+udocker --allow-root  run --name miner --rm -it \
     -e POOL_URL=$POOL_URL \
     -e POOL_USER=$POOL_USER \
     -e POOL_PASS=$POOL_PASS \
